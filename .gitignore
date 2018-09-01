@@ -1,0 +1,2 @@
+# We dont want these files commited with Git
+.vscode
