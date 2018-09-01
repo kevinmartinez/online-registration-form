@@ -1,7 +1,89 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Vidaloka', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Tinos', serif;
+}
+
+input, textarea, select, button {
+  width : 150px;
+  margin: 0;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+          box-sizing: border-box;
+}
+
+/*  */
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;
+}
+
+textarea {
+  vertical-align: top;
+}
+/*
+TODO: Read and remove
+The text fields require some common rules. Simply put, we remove their borders and backgrounds, and redefine their padding and margin:
+*/
+input, textarea {
+  font    : 2em/1.5em "handwriting", sans-serif;
+  border  : none;
+  margin  : 0;
+  width   : 240px;
+  background: #ccc;
+}
+
+/*
+TODO: Read and remove
+When one of these fields gains focus, we highlight them with a light grey, transparent, background. Note that it's important to add the outline property, in order to remove the default focus highlight added by some browsers:
+*/
+
+input:focus, textarea:focus {
+  background   : rgba(0,0,0,.1);
+  border-radius: 5px;
+  outline      : none;
+}
+
+/*
+TODO: Read and remove
+<textarea> elements default to being rendered as a block element. The two important things here are the resize and overflow properties. Because our design is a fixed-size design, we will use the resize property to prevent users from resizing our multi-line text field. The overflow property is used to make the field render more consistently across browsers. Some browsers default to the value auto, while some default to the value scroll. In our case, it's better to be sure every one will use auto:
+
+*/
+
+textarea {
+  padding : 10px;
+  width   : 300px;
+  height  : 200px;
+  resize  : none;
+  overflow: auto;
+}
+
+.site-header {
+  text-align:center;
+}
+
 .site-heading  {
-  background-color: #000;
+  background-color: #2d3945;
   color: #fff;
-  padding: 30px 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding:15px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: -10px;
+}
+
+.info {
+  color: grey;
+  font-size: 0.9rem;
 }
 
 label {
