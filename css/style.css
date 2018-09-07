@@ -31,10 +31,10 @@ TODO: Read and remove
 The text fields require some common rules. Simply put, we remove their borders and backgrounds, and redefine their padding and margin:
 */
 input, textarea {
-  font    : 2em/1.5em "handwriting", sans-serif;
+  font    : 1.5rem/1.5 "handwriting", sans-serif;
   border  : none;
   margin  : 0;
-  width   : 240px;
+  max-width   : 80%;
   background: #ccc;
 }
 
@@ -88,4 +88,14 @@ h2 {
 
 label {
   display: block;
+}
+
+/* Form  */
+#newsletter {
+  max-width: 80%;
+  border: 5px solid green;
+}
+
+fieldset {
+  border: none;
 }
