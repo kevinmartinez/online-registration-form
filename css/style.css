@@ -1,20 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 0;
-  margin: 0;
   font-family: 'Vidaloka', serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .info {
   font-family: 'Tinos', serif;
-}
-
-input, textarea, select, button {
-  width : 150px;
-  margin: 0;
-
-  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
-     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
-          box-sizing: border-box;
 }
 
 /*  */
@@ -30,12 +23,13 @@ textarea {
 TODO: Read and remove
 The text fields require some common rules. Simply put, we remove their borders and backgrounds, and redefine their padding and margin:
 */
+input, textarea, select {
+  background: #eff0f1;
+}
+
 input, textarea {
-  font    : 1.5rem/1.5 "handwriting", sans-serif;
+  font    : 1rem/1.5 "handwriting", sans-serif;
   border  : none;
-  margin  : 0;
-  max-width   : 80%;
-  background: #ccc;
 }
 
 /*
@@ -57,8 +51,7 @@ TODO: Read and remove
 
 textarea {
   padding : 10px;
-  width   : 300px;
-  height  : 200px;
+  /* width   : 300px; */
   resize  : none;
   overflow: auto;
 }
@@ -70,32 +63,62 @@ textarea {
 .site-heading  {
   background-color: #2d3945;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  padding:15px;
+  padding:25px 0;
   margin: 0;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 1.1rem;
-  margin-bottom: -10px;
+  font-size: 1.3rem;
+  margin: 25px 0 -5px;
+  font-weight: 700;
 }
 
 .info {
   color: grey;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 400;
 }
-
-label {
-  display: block;
-}
-
 /* Form  */
-#newsletter {
-  max-width: 80%;
-  border: 5px solid green;
-}
+
 
 fieldset {
   border: none;
+}
+
+.contact-info label {
+  display: block;
+}
+
+.signup {
+  padding: 0 15px;
+}
+
+.divider {
+  color: red;
+  height: 2px;
+  border-top: 4px solid #2d3945;
+  border-bottom: 2px solid #2d3945;
+  border-left: none;
+  border-right: none;
+  width: 90%;
+}
+
+.contact-info input, select {
+  border-radius: 5px;
+  margin: 10px 0 20px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: red;
+  }
+  .contact-info label {
+    display: inline-block;
+  }
 }
