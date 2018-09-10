@@ -2,12 +2,12 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Vidaloka', serif;
+body, input {
+  font-family: 'Josefin Slab', serif;
 }
 
-h1, h2, h3, h4, h5, h6, .info {
-  font-family: 'Tinos', serif;
+h1, h2, h3, h4, h5, h6, .info, legend {
+  font-family: 'Tinos', Times, "Times New Roman", serif;
 }
 
 /*  */
@@ -23,13 +23,19 @@ textarea {
 TODO: Read and remove
 The text fields require some common rules. Simply put, we remove their borders and backgrounds, and redefine their padding and margin:
 */
+input {
+  text-align: right;
+}
+
 input, textarea, select {
   background: #eff0f1;
 }
 
 input, textarea {
-  font    : 1rem/1.5 "handwriting", sans-serif;
+  font    : 1rem/1.5 "Josefin Slab", serif;
   border  : none;
+   font-style: italic;
+  font-weight: 400;
 }
 
 /*
@@ -48,6 +54,12 @@ TODO: Read and remove
 <textarea> elements default to being rendered as a block element. The two important things here are the resize and overflow properties. Because our design is a fixed-size design, we will use the resize property to prevent users from resizing our multi-line text field. The overflow property is used to make the field render more consistently across browsers. Some browsers default to the value auto, while some default to the value scroll. In our case, it's better to be sure every one will use auto:
 
 */
+
+label {
+
+  font-weight: 400;
+  color: #6c7a89;
+}
 
 textarea {
   padding : 10px;
@@ -115,9 +127,6 @@ fieldset {
 }
 
 @media (min-width: 768px) {
-  body {
-    background-color: red;
-  }
   .contact-info label {
     display: inline-block;
   }
