@@ -23,6 +23,10 @@ textarea {
 TODO: Read and remove
 The text fields require some common rules. Simply put, we remove their borders and backgrounds, and redefine their padding and margin:
 */
+legend {
+  font-size: 1.3rem;
+}
+
 input {
   text-align: right;
 }
@@ -56,7 +60,7 @@ TODO: Read and remove
 */
 
 label {
-
+  margin-top: 1em;
   font-weight: 400;
   color: #6c7a89;
 }
@@ -80,12 +84,13 @@ textarea {
   text-transform: uppercase;
   padding:25px 0;
   margin: 0;
+  margin-bottom: 1.2em;
   font-weight: 700;
 }
 
 h2 {
   font-size: 1.3rem;
-  margin: 25px 0 -5px;
+  margin: 0;
   font-weight: 700;
 }
 
@@ -93,6 +98,8 @@ h2 {
   color: grey;
   font-size: 1rem;
   font-weight: 400;
+  margin-top: 0.8em;
+
 }
 /* Form  */
 
@@ -110,7 +117,8 @@ fieldset {
 }
 
 .divider {
-  color: red;
+  margin-top: 2em;
+  margin-bottom: 1em;
   height: 2px;
   border-top: 4px solid #2d3945;
   border-bottom: 2px solid #2d3945;
