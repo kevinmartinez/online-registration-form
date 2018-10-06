@@ -15,13 +15,12 @@ html {
 }
 
 body {
-  font-family: 'Josefin Slab', serif;
-  background-color: #e8edf3;
   background-color: #feffff;
+  font-family: 'Josefin Slab', 'Times New Roman', Times, serif;
 }
 
 h1, h2, h3, h4, h5, h6, .info, legend {
-  font-family: 'Tinos', Times, "Times New Roman", serif;
+  font-family: 'Tinos', 'Times New Roman', Times, serif;
 }
 
 h2 {
