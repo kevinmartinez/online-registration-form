@@ -105,13 +105,6 @@ legend {
   margin-top: 1.5em;
 }
 
-/* input[type="checkbox"],
-input[type="radio"] {
-  margin-right: 10px;
-} */
-
-
-
 .contact-info label {
   display: block;
 }
@@ -215,13 +208,39 @@ When one of these fields gains focus, we highlight them with a light grey, trans
   color: red;
 }
 
-input:focus,
+/* CHECKBOX STYLES */
+/* TODO: For fixing jumping when chekbox marked */
+/* Flex easiest... */
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+/* TODO: FIX MARGINS */
+.checkbox:first-of-type {
+  margin-top: 30px;
+}
+
+/* TODO: Test :checked pseudo class */
+input[type="checkbox"]:checked + label {
+  color: #729f98;
+  font-style: italic;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 20px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
 select:focus,
 textarea:focus,
 button:focus {
   outline      : none;
   /* border-radius: 5px; */
-  /* background   : rgba(0,0,0,.1); */
+  background   : rgba(0,0,0,.1);
 }
 
 /* input, textarea {
@@ -272,13 +291,6 @@ textarea:hover {
   background: #f0eceb;
   -webkit-transition: .5s;
   transition: .5s;
-}
-
-/* TODO: Test :checked pseudo class */
-input[type="checkbox"]:checked + label {
-  color: #729f98;
-  font-weight: 400;
-  font-style: italic;
 }
 
 .submit-btn {
