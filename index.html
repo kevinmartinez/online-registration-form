@@ -17,9 +17,9 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
   <header class="site-header" role="banner">
-    <h1 class="site-heading">The Code Review</h1>
+    <h1 class="heading heading__large">The Code Review</h1>
     <div class="signup">
-      <h2>Signup for our newsletter</h2>
+      <h2 class="heading heading__medium">Signup for our newsletter</h2>
       <p class="info">Get the latest news on how your code is doing right in your inbox</p>
       <hr class="divider" role="separator">
     </div>
@@ -28,7 +28,7 @@
   <main class="container" role="main">
     <form id="newsletter" action="thanks.html" method="POST">
       <fieldset class="contact-info">
-        <legend>Contact Information</legend>
+        <legend class="heading heading__small">Contact Information</legend>
 
 
         <div>
@@ -126,7 +126,7 @@
       </fieldset>
       <!-- Using fieldset to separate the text&number inputs from the radio and check inputs -->
       <fieldset class="newsletter">
-        <legend>Newsletter</legend>
+        <legend class="heading heading__small">Newsletter</legend>
         <p>Select the newsletter you would like to recieve</p>
         <div class="checkbox">
           <input type="checkbox" name="news" id="newsHTML" value="HTML">
@@ -140,7 +140,7 @@
           <input type="checkbox" name="news" id="newsJS" value="JS">
           <label for="newsJS">JavaScript News</label>
         </div>
-        <h3>Newsletter Format</h3>
+        <p>Newsletter Format</p>
         <div>
           <input type="radio" id="HTML" name="format" value="html" />
           <label for="HTML">HTML</label>
@@ -150,7 +150,7 @@
           <label for="plainText">Plain text</label>
         </div>
         <!-- TODO: Should textarea be in it's own <fieldset> ? -->
-        <h3>Other topics you'd like to hear about?</h3>
+        <label for="topics">Other topics you'd like to hear about?</label>
         <textarea name="user_topics" id="topics" placeholder="I'd love to hear about..."></textarea>
       </fieldset>
       <button class="submit-btn" type="submit">Sign up</button>
