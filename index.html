@@ -16,51 +16,49 @@
   <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
-  <header class="header" role="banner">
+  <header class="header text-center" role="banner">
     <div class="header--intro">
       <h1 class="heading heading__large">The Code Review</h1>
     </div>
-    <div class="header--signup">
+    <div class="header--signup center">
       <h2 class="heading heading__medium">Signup for our newsletter</h2>
-      <p class="info">Get the latest news on how your code is doing right in your inbox</p>
-      <hr class="divider" role="separator">
+      <p class="header--info">Get the latest news on how your code is doing right in your inbox</p>
+      <hr class="header--divider" role="separator">
     </div>
   </header>
 
   <main class="container" role="main">
-    <form id="newsletter" action="thanks.html" method="POST">
-      <fieldset class="contact-info">
+    <form class="form" id="newsletter" action="thanks.html" method="POST">
+      <fieldset class="form--field">
         <legend class="heading heading__small">Contact Information</legend>
-
-
         <div>
-          <label for="name">Full Name</label>
+          <label class="form--label label--margin" for="name">Full Name</label>
           <input type="text" name="user_name" placeholder="Required" id="name" required aria-required="true" title="Format: firstname lastname"
             pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+">
         </div>
 
         <div>
-          <label for="email">Email Adress</label>
+          <label class="form--label" for="email">Email Adress</label>
           <input type="email" name="user_email" placeholder="Required" id="email" required aria-required="true">
         </div>
 
         <div>
-          <label for="phone">Phone Number</label>
+          <label class="form--label" for="phone">Phone Number</label>
           <input type="tel" name="user_phone" id="phone" placeholder="Optional">
         </div>
 
         <div>
-          <label for="street">Street Adress</label>
+          <label class="form--label" for="street">Street Adress</label>
           <input type="text" name="user_street" id="street" placeholder="Optional">
         </div>
 
         <div>
-          <label for="city">City</label>
+          <label class="form--label" for="city">City</label>
           <input type="text" name="user_city" id="city" placeholder="Optional">
         </div>
 
-        <div class="select">
-          <label for="state">State</label>
+        <div class="signup--select-field">
+          <label class="form--label" for="state">State</label>
           <select name="user_state" id="state">
             <option disabled selected="selected">Choose State</option>
             <optgroup label="US States">
@@ -121,45 +119,45 @@
           </select>
         </div>
         <div>
-          <label for="zip" class="label">Zip Code</label>
+          <label class="form--label" for="zip" class="label">Zip Code</label>
           <input type="text" name="user_zip" id="zip" placeholder="Optional">
         </div>
 
       </fieldset>
       <!-- Using fieldset to separate the text&number inputs from the radio and check inputs -->
-      <fieldset class="newsletter">
+      <fieldset class="form--field">
         <legend class="heading heading__small">Newsletter</legend>
-        <p>Select the newsletter you would like to recieve</p>
-        <div class="checkbox">
+        <label class="form--label label--margin">Select the newsletter you would like to recieve</label>
+        <div class="form--checkbox">
           <input type="checkbox" name="news" id="newsHTML" value="HTML">
-          <label for="newsHTML">HTML News</label>
+          <label class="form--label" for="newsHTML">HTML News</label>
         </div>
-        <div class="checkbox">
+        <div class="form--checkbox">
           <input type="checkbox" name="news" id="newsCSS" value="CSS">
-          <label for="newsCSS">CSS News</label>
+          <label class="form--label" for="newsCSS">CSS News</label>
         </div>
-        <div class="checkbox">
+        <div class="form--checkbox">
           <input type="checkbox" name="news" id="newsJS" value="JS">
-          <label for="newsJS">JavaScript News</label>
+          <label class="form--label" for="newsJS">JavaScript News</label>
         </div>
-        <p>Newsletter Format</p>
+        <label class="form--label label--margin">Newsletter Format</label>
         <div>
           <input type="radio" id="HTML" name="format" value="html" />
-          <label for="HTML">HTML</label>
+          <label class="form--label" for="HTML">HTML</label>
         </div>
         <div>
           <input type="radio" id="plainText" name="format" value="plainText" />
-          <label for="plainText">Plain text</label>
+          <label class="form--label" for="plainText">Plain text</label>
         </div>
         <!-- TODO: Should textarea be in it's own <fieldset> ? -->
-        <label for="topics">Other topics you'd like to hear about?</label>
+        <label class="form--label label--margin" for="topics">Other topics you'd like to hear about?</label>
         <textarea name="user_topics" id="topics" placeholder="I'd love to hear about..."></textarea>
       </fieldset>
-      <button class="submit-btn" type="submit">Sign up</button>
+      <button class="form--submit-btn" type="submit">Sign up</button>
     </form>
   </main>
-  <footer class="main-footer" role="contentinfo">
-    <small>&copy; Kevin 2018</small>
+  <footer class="footer" role="contentinfo">
+    <small class="footer--copyright">&copy; Kevin 2018</small>
   </footer>
   <!-- All you have to do is include the reload script and have it be on every page of your project -->
   <script src="/reload/reload.js"></script>
