@@ -31,11 +31,19 @@
     <form class="form" id="newsletter" action="thanks.html" method="POST">
       <fieldset class="form__section">
         <legend class="heading heading--small">Contact Information</legend>
-        <div>
-          <label class="form__label label__margin" for="name">Full Name</label>
-          <input type="text" name="user_name" placeholder="Required" id="name" required aria-required="true" title="Format: firstname lastname"
-            pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+">
+        <div class="form__field--flex flex--name">
+          <div class="form__field--half">
+            <label class="form__label" for="name">Full Name</label>
+            <input type="text" name="user_name" placeholder="Required" id="name" required aria-required="true" title="Format: firstname lastname"
+              pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+">
+          </div>
+          <div class="form__field--half">
+            <label class="form__label" for="name">Full Name</label>
+            <input type="text" name="user_name" placeholder="Required" id="name" required aria-required="true" title="Format: firstname lastname"
+              pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+">
+          </div>
         </div>
+
 
         <div>
           <label class="form__label" for="email">Email Adress</label>
@@ -128,24 +136,24 @@
       <fieldset class="form__section">
         <legend class="heading heading--small">Newsletter</legend>
         <h3 class="form__label label__margin">Select the newsletter you would like to recieve</h3>
-        <div class="form__field__flex">
+        <div class="form__field--flex flex--center">
           <input type="checkbox" name="news" id="newsHTML" value="HTML">
           <label class="form__label" for="newsHTML">HTML News</label>
         </div>
-        <div class="form__field--flex">
+        <div class="form__field--flex flex--center">
           <input type="checkbox" name="news" id="newsCSS" value="CSS">
           <label class="form__label" for="newsCSS">CSS News</label>
         </div>
-        <div class="form__field--flex">
+        <div class="form__field--flex flex--center">
           <input type="checkbox" name="news" id="newsJS" value="JS">
           <label class="form__label" for="newsJS">JavaScript News</label>
         </div>
         <h3 class="form__label label__margin">Newsletter Format</h3>
-        <div class="form__field--flex">
+        <div class="form__field--flex flex--center">
           <input type="radio" id="HTML" name="format" value="html" />
           <label class="form__label" for="HTML">HTML</label>
         </div>
-        <div class="form__field--flex">
+        <div class="form__field--flex flex--center">
           <input type="radio" id="plainText" name="format" value="plainText" />
           <label class="form__label" for="plainText">Plain text</label>
         </div>
@@ -153,7 +161,15 @@
         <label class="form__label label__margin" for="topics">Other topics you'd like to hear about?</label>
         <textarea name="user_topics" id="topics" placeholder="I'd love to hear about..."></textarea>
       </fieldset>
-      <button class="form__submit-btn" type="submit">Sign up</button>
+      <fieldset class="form__section">
+        <legend class="heading heading--small">Terms</legend>
+        <div class="form__field--flex flex--center">
+          <input type="checkbox" id="terms" required name="terms">
+          <label class="form__label" for="terms">I accept the Terms and Conditions</label>
+        </div>
+        <button class="form__submit-btn" type="submit">Sign up</button>
+      </fieldset>
+
     </form>
   </main>
   <footer class="footer" role="contentinfo">
