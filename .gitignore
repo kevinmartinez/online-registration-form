@@ -1,3 +1,5 @@
 # We dont want these files commited with Git
 .vscode
 node_modules
+counter.text
+old.text

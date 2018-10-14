@@ -124,8 +124,8 @@ The text fields require some common rules. Simply put, we remove their borders a
   color: #fff;
   text-transform: uppercase;
   font-size: 1.9em;
-  /* /* margin-bottom: .5em; */
-  padding-bottom: .5em; */
+  /* margin-bottom: .5em; */
+  padding-bottom: .5em;
 }
 
 .heading--medium {
@@ -494,8 +494,9 @@ textarea:hover {
     max-width: 900px;
   }
   input[type="text"], input[type="email"], input[type="tel"], textarea {
-  border: 2px solid #eff0f1;
-  font-size: 1.3em;
+    border: 2px solid #eff0f1;
+    font-size: 1.3em;
+  }
 }
 
 /*
@@ -511,4 +512,3 @@ input:invalid + .help {
 input:focus + .help {
     display:inline-block;
 } */
-
