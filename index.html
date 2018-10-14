@@ -42,44 +42,47 @@
         </div>
 
         <!-- Email field -->
-        <div>
-          <label class="form__label" for="email">Email Adress</label>
-          <input type="email" name="user_email" placeholder="Required" id="email" required aria-required="true">
+        <div class="form__field form__field--email-wrap">
+          <div class="form__field form__field--email">
+            <label class="form__label" for="email">Email Adress</label>
+            <input type="email" name="user_email" placeholder="Required" id="email" required aria-required="true">
+          </div>
+
+          <!-- Confirm email field -->
+          <div class="form__field form__field--email">
+            <label class="form__label" for="confirme-email">Confirm Email</label>
+            <input type="email" name="user_email_confirm" placeholder="Required" id="confirm-email" required
+              aria-required="true">
+          </div>
         </div>
 
-        <!-- Confirm email field -->
-        <div>
-          <label class="form__label" for="confirme-email">Confirm Email</label>
-          <input type="email" name="user_email_confirm" placeholder="Required" id="confirm-email" required
-            aria-required="true">
-        </div>
 
         <!-- Website field -->
-        <div>
+        <div class="form__field">
           <label class="form__label" for="website">Website</label>
           <input type="url" name="user_website" placeholder="Optional" id="website">
         </div>
 
         <!-- Phone # field -->
-        <div>
+        <div class="form__field">
           <label class="form__label" for="phone">Phone Number</label>
           <input type="tel" name="user_phone" id="phone" placeholder="Optional">
         </div>
 
         <!-- Street adress field -->
-        <div>
+        <div class="form__field">
           <label class="form__label" for="street">Street Adress</label>
           <input type="text" name="user_street" id="street" placeholder="Optional">
         </div>
 
         <!-- City field -->
-        <div>
+        <div class="form__field">
           <label class="form__label" for="city">City</label>
           <input type="text" name="user_city" id="city" placeholder="Optional">
         </div>
-
+        <!-- TODO: FIX FLEX FOR SELECT AND ZIP -->
         <!-- Select field -->
-        <div class="signup__select-field">
+        <div class="form__field signup__select-field">
           <label class="form__label" for="state">State</label>
           <select name="user_state" id="state">
             <option disabled selected="selected">Choose State</option>

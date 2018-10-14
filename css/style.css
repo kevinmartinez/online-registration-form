@@ -46,6 +46,11 @@ p {
   padding: 0;
 }
 
+button, input, select, textarea {
+  font-size   : 100%;
+  font-family : inherit;
+}
+
 /* textarea {
   vertical-align: top;
 } */
@@ -143,18 +148,6 @@ The text fields require some common rules. Simply put, we remove their borders a
 /* Sections
 ============================ */
 
-.top-margin {
-  /* margin-top: 1em; */
-}
-
-.form__field {
-  /* margin-top: 1em; */
-}
-
-.label__margin {
-  /* margin-top: 1em; */
-}
-
 .footer {
   /* margin-top: 0.75em; */
   text-align: center;
@@ -170,26 +163,28 @@ The text fields require some common rules. Simply put, we remove their borders a
   border-bottom: 2px solid var(--primary--black);
 }
 
+/* Flexbox settings */
+
+/* TODO: Use better names? */
+.form__field {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+}
+
+.flex--center {
+  align-items: center;
+}
+
 .form__label {
-  display: block;
   font-size: 1.2em;
   font-weight: 600;
   color: #444e56;
-}
-
-textarea {
-  overflow: auto;
-  padding : 10px;
-  width   : 100%;
-  height: 150px;
-  resize  : none;
-}
-
-
-
-button, input, select, textarea {
-  font-size   : 100%;
-  font-family : inherit;
+  /* flex-grow: 1; */
+  /* TODO: Move to media query?? */
+  flex-grow: 1;
+  flex-basis: 10%;
 }
 
 /* TODO: Rename */
@@ -201,11 +196,19 @@ textarea {
   background-color: #eff0f1;
   /* margin: 10px 0 20px; */
   padding: .6em 3%;
-  width: 100%;
   border-radius: 5px;
   border: 2px solid #eff0f1;
   font-size: 1.125em;
   min-height: 44px;
+  flex-grow: 2;
+}
+
+textarea {
+  overflow: auto;
+  padding : 10px;
+  width   : 100%;
+  height: 150px;
+  resize  : none;
 }
 
 input[name="user_zip"] {
@@ -239,18 +242,6 @@ When one of these fields gains focus, we highlight them with a light grey, trans
   color: red;
 }
 
-/* TODO: Use better names? */
-.form__field {
-  display: flex;
-}
-
-.flex--center {
-  align-items: center;
-}
-
-.flex--name {
-  flex-direction: column;
-}
 
 /* TODO: Test :checked pseudo class */
 input[type="checkbox"]:checked + label {
@@ -429,6 +420,54 @@ textarea:hover {
 @media (min-height: 416px) and (min-width: 760px) {
   html {
     font-size: 1.1em;
+  }
+
+  /* Flexbox settings */
+
+  /* TODO: Use better names? */
+  .form__field {
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    align-items: baseline;
+  }
+
+  .form__field--email-wrap {
+    justify-content: space-between;
+  }
+
+  .form__field--email {
+    flex-direction: column;
+    /* flex: 2; */
+    flex-basis: 48%;
+    align-items: stretch;
+  }
+
+  input[type="email"] {
+    flex: 1;
+  }
+
+  .form__label {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #444e56;
+    /* flex-grow: 1; */
+  }
+
+  /* TODO: Rename */
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  textarea {
+    background-color: #eff0f1;
+    /* margin: 10px 0 20px; */
+    padding: .6em 3%;
+    border-radius: 5px;
+    border: 2px solid #eff0f1;
+    font-size: 1.125em;
+    min-height: 44px;
+
+    flex-grow: 2;
   }
 
   .header__intro {
