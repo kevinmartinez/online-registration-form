@@ -171,8 +171,10 @@ The text fields require some common rules. Simply put, we remove their borders a
 }
 
 .form__label {
-  font-size: 1.2em;
   display: block;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #444e56;
 }
 
 textarea {
@@ -183,16 +185,14 @@ textarea {
   resize  : none;
 }
 
-label {
-  color: #444e56;
-  font-weight: 600;
-}
+
 
 button, input, select, textarea {
   font-size   : 100%;
   font-family : inherit;
 }
 
+/* TODO: Rename */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -239,7 +239,8 @@ When one of these fields gains focus, we highlight them with a light grey, trans
   color: red;
 }
 
-.form__field--flex {
+/* TODO: Use better names? */
+.form__field {
   display: flex;
 }
 
@@ -379,15 +380,13 @@ textarea:focus {
   -webkit-transition: 1s;
   transition: 1s;
 }
+
 input:hover,
 textarea:hover {
   background: #f0eceb;
   -webkit-transition: .5s;
   transition: .5s;
 }
-
-
-
 
 /* TODO: This is outcommented due to
 <select> TODO: FIX */
@@ -407,6 +406,7 @@ textarea:hover {
     font-size: .8em;
   }
   body {
+    /* TODO: Remove before submit */
     background: lightskyblue;
   }
 
@@ -424,19 +424,6 @@ textarea:hover {
   textarea {
     font-size: 1.2em;
   }
-/* TODO: FIX THIS MEDIA QUERY, IT SHOULD NOT REPEAT THE FLEX PROPS */
-  .flex--name {
-    flex-direction: row;
-  }
-
-  .form__field--half {
-  flex-grow: 1;
-}
-
-.form__field--half:first-child {
-  margin-right: .5em;
-}
-
 }
 
 @media (min-height: 416px) and (min-width: 760px) {
@@ -450,52 +437,18 @@ textarea:hover {
     padding-bottom: 2.7em;
   }
 
-  body {
-    /* TODO: Remove placeholder bgc */
-    /* background-color: lightcoral; */
-  }
-
-  .flex--name {
-    flex-direction: row;
-  }
-
-  .form__field--half {
-  flex-grow: 1;
 }
-
-.form__field--half:first-child {
-  margin-right: .5em;
-}
-
-/* TODO: FIX MARGINS */
-.news-section__checkbox:first-of-type {
-  /* margin-top: 30px; */
-}
-
-}
-
-/* @media (min-width: 768px), (min-width: 400px) and (orientation: landscape) */
-
-/* @media (orientation: landscape) {
-  body {
-    background-color: greenyellow;
-  }
-} */
 
 @media (min-width: 1024px) {
   html {
     font-size: 1.3em;
   }
 
-  body {
-    /* TODO: Remove placeholder bgc */
-    /* background-color: yellow; */
-  }
-
   .container,
   .header__signup {
     max-width: 900px;
   }
+
   input[type="text"],
   input[type="email"],
   input[type="tel"],
