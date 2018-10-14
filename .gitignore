@@ -3,3 +3,4 @@
 node_modules
 counter.text
 old.text
+.DS_Store
