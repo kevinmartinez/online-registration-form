@@ -148,9 +148,17 @@ The text fields require some common rules. Simply put, we remove their borders a
 /* Sections
 ============================ */
 
-.footer {
-  /* margin-top: 0.75em; */
-  text-align: center;
+.form {
+  counter-reset: steps;
+}
+
+legend {
+  counter-increment: steps;
+}
+
+legend::before {
+  content: counter(steps) ". ";
+  color: teal;
 }
 
 .form__section {
@@ -181,10 +189,7 @@ The text fields require some common rules. Simply put, we remove their borders a
   font-size: 1.2em;
   font-weight: 600;
   color: #444e56;
-  /* flex-grow: 1; */
-  /* TODO: Move to media query?? */
-  flex-grow: 1;
-  flex-basis: 10%;
+  flex: 1;
 }
 
 /* TODO: Rename */
@@ -200,7 +205,7 @@ textarea {
   border: 2px solid #eff0f1;
   font-size: 1.125em;
   min-height: 44px;
-  flex-grow: 2;
+  flex: 1;
 }
 
 textarea {
@@ -438,20 +443,23 @@ textarea:hover {
 
   .form__field--email {
     flex-direction: column;
-    /* flex: 2; */
-    flex-basis: 48%;
+    flex: 1;
     align-items: stretch;
   }
 
-  input[type="email"] {
-    flex: 1;
+  .form__field--email:first-of-type {
+    margin-right: 10px;
   }
+
+  /* input[type="email"] {
+    flex: 1;
+  } */
 
   .form__label {
     font-size: 1.2em;
     font-weight: 600;
     color: #444e56;
-    /* flex-grow: 1; */
+    /* flex: 1 20%; */
   }
 
   /* TODO: Rename */
@@ -466,8 +474,8 @@ textarea:hover {
     border: 2px solid #eff0f1;
     font-size: 1.125em;
     min-height: 44px;
-
-    flex-grow: 2;
+    /* flex: 10; */
+    flex: 2 20%;
   }
 
   .header__intro {
@@ -481,6 +489,20 @@ textarea:hover {
 @media (min-width: 1024px) {
   html {
     font-size: 1.3em;
+  }
+
+  .form__label {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #444e56;
+  }
+
+   /* TODO: Rename */
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  textarea {
+    flex: 55%;
   }
 
   .container,
