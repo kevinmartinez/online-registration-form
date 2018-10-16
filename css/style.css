@@ -15,8 +15,8 @@ html{
 h1,h2,h3,h4,h5,h6,hgroup,
 ul,ol,dd,
 p,figure,
-pre,table,fieldset,hr,
-input:not([type="checkbox"]):not([type="radio"]), legend {
+pre,table,fieldset,hr,legend,
+.form__field {
     margin-bottom:1.5rem;
 }
 
@@ -177,8 +177,6 @@ legend::before {
 .form__field {
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
 }
 
 .flex--center {
@@ -192,11 +190,20 @@ legend::before {
   flex: 1;
 }
 
+.form__field--email {
+  margin-bottom: 0;
+}
+
+.form__field--email:first-child {
+  margin-bottom: 1rem;
+}
+
 /* TODO: Rename */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="url"],
+select,
 textarea {
   background-color: #eff0f1;
   /* margin: 10px 0 20px; */
@@ -222,13 +229,12 @@ input[name="user_zip"] {
 
 select {
   /* margin: 10px 0 20px; */
-  padding: 8px 15px;
+  /* padding: 8px 15px;
   height: 43px;
   width: 100%;
   border-radius: 5px;
-  /* Avoid input fields feeling 'jumpy' when hover border is applied */
-  border: 2px solid #eff0f1;
-  font-size: 1em;
+  border: 2px solid #eff0f1; */
+  /* font-size: 1em; */
     color: #a4b0be;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -417,6 +423,7 @@ textarea:hover {
   input[type="email"],
   input[type="tel"],
   input[type="url"],
+  select,
   textarea {
     font-size: 1.2em;
   }
@@ -466,14 +473,8 @@ textarea:hover {
   input[type="text"],
   input[type="tel"],
   input[type="url"],
+  select,
   textarea {
-    background-color: #eff0f1;
-    /* margin: 10px 0 20px; */
-    padding: .6em 3%;
-    border-radius: 5px;
-    border: 2px solid #eff0f1;
-    font-size: 1.125em;
-    min-height: 44px;
     /* flex: 10; */
     flex: 2 20%;
   }
@@ -497,26 +498,20 @@ textarea:hover {
     color: #444e56;
   }
 
-   /* TODO: Rename */
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  textarea {
-    flex: 55%;
-  }
-
   .container,
   .header__signup {
     max-width: 900px;
   }
 
   input[type="text"],
-  input[type="email"],
   input[type="tel"],
+  input[type="email"],
   input[type="url"],
+  select,
   textarea {
     border: 2px solid #eff0f1;
     font-size: 1.3em;
+    flex: 55%;
   }
 }
 
