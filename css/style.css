@@ -182,6 +182,10 @@ legend::before {
   flex-direction: column;
 }
 
+.form__field--newsletter {
+  flex-direction: row;
+}
+
 .flex--center {
   align-items: center;
 }
