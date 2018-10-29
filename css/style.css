@@ -184,9 +184,6 @@ legend::before {
 
 .form__field--newsletter {
   flex-direction: row;
-}
-
-.flex--center {
   align-items: center;
 }
 
@@ -195,14 +192,6 @@ legend::before {
   font-weight: 600;
   color: #444e56;
   flex: 1;
-}
-
-.form__field--email {
-  margin-bottom: 0;
-}
-
-.form__field--email:first-child {
-  margin-bottom: 1rem;
 }
 
 /* TODO: Rename */
@@ -219,7 +208,7 @@ textarea {
   border: 2px solid #eff0f1;
   font-size: 1.125em;
   min-height: 44px;
-  flex: 1;
+  flex: 2.5;
 }
 
 textarea {
@@ -333,9 +322,7 @@ textarea:hover {
   border: none;
   display: block;
   cursor: pointer;
-  margin: auto;
-  /* margin-top: 1em; */
-  padding: .65em 0;
+  padding: .8em 0;
   width: 100%;
   border-radius: .2em;
   background-color: #322a60;
@@ -343,7 +330,7 @@ textarea:hover {
   text-transform: capitalize;
   letter-spacing: 1px;
   font-weight: 700;
-  font-size: 1.5rem; /* 150% / 24px; */
+  font-size: 1.8em; /* 150% / 24px; */
 }
 
 .form__submit-btn:hover {
@@ -420,10 +407,12 @@ textarea:hover {
   }
 
   .header__divider {
-    /* margin-top: .5em; */
-    /* margin-bottom: 0; */
     border-top-width: 2px;
     border-bottom-width: .5px;
+  }
+
+  .form__input {
+    font-size: 1.2em;
   }
 
   input[type="text"],
@@ -434,6 +423,8 @@ textarea:hover {
   textarea {
     font-size: 1.2em;
   }
+
+
 }
 
 @media (min-height: 416px) and (min-width: 760px) {
@@ -441,53 +432,33 @@ textarea:hover {
     font-size: 1.1em;
   }
 
-  /* Flexbox settings */
-
-  /* TODO: Use better names? */
+      /* TODO: Use better names? */
   .form__field {
     flex-direction: row;
-    /* flex-wrap: wrap; */
-    /* justify-content: space-between; */
-    align-items: baseline;
+    align-items: center;
   }
 
-  .form__field--email-wrap {
-    justify-content: space-between;
-  }
+  /* Flexbox settings */
 
-  .form__field--email {
-    flex-direction: column;
-    flex: 1;
-    align-items: stretch;
-  }
 
-  .form__field--email:first-of-type {
-    margin-right: 10px;
-  }
-
-  /* input[type="email"] {
-    flex: 1;
-  } */
 
   .form__label {
     font-size: 1.2em;
     font-weight: 600;
     color: #444e56;
-    /* flex: 1 20%; */
   }
 
   /* TODO: Rename */
   input[type="text"],
   input[type="tel"],
+  input[type="email"],
   input[type="url"],
   select,
   textarea {
-    /* flex: 10; */
-    flex: 2 20%;
+    flex: 2.5;
   }
 
   .header__intro {
-    /* margin-bottom: 2em; */
     padding-top: 2.4em;
     padding-bottom: 2.7em;
   }
@@ -518,7 +489,7 @@ textarea:hover {
   textarea {
     border: 2px solid #eff0f1;
     font-size: 1.3em;
-    flex: 55%;
+    flex: 3.5;
   }
 }
 
