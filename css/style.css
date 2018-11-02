@@ -41,7 +41,6 @@ body {
 
 h1, h2, h3, h4, h5, h6, .header--info, legend {
   font-family: 'Tinos', 'Times New Roman', Times, serif;
-  /* margin: 0; */
 }
 
 p {
@@ -53,10 +52,6 @@ button, input, select, textarea {
   font-size   : 100%;
   font-family : inherit;
 }
-
-/* textarea {
-  vertical-align: top;
-} */
 
 /*
 TODO: Read and remove
@@ -73,6 +68,7 @@ The text fields require some common rules. Simply put, we remove their borders a
   margin-right: auto;
 }
 
+/* TODO: Look over these helper classes */
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -84,10 +80,6 @@ The text fields require some common rules. Simply put, we remove their borders a
 
 /* Header
 ============================ */
-
-/* .header {
-  background: linear-gradient(#2d3945, #e0eefD, var(--primary--white) 80%);
-} */
 
 .header__intro {
   background-color: #532F61;
@@ -132,7 +124,6 @@ The text fields require some common rules. Simply put, we remove their borders a
   color: var(--primary--white);
   text-transform: uppercase;
   font-size: 1.9em;
-  /* margin-bottom: .5em; */
   padding-bottom: .5em;
 }
 
@@ -162,6 +153,7 @@ legend {
 
 legend::before {
   content: counter(steps) ". ";
+  /* TODO: CHANGE COLOR */
   color: teal;
 }
 
@@ -174,8 +166,6 @@ legend::before {
   /* TODO: Change color, do not use primary black, because it does not fit so good with the heading below */
   border-bottom: 2px solid var(--primary--black);
 }
-
-/* Flexbox settings */
 
 /* TODO: Use better names? */
 .form__field {
@@ -191,12 +181,12 @@ legend::before {
 .form__label {
   font-size: 1.2em;
   font-weight: 600;
+  /* TODO: FIX VARIABLE FOR THIS COLOR */
   color: #444e56;
   color: var(--secondary--black);
-  flex: 1;
 }
 
-/* TODO: Rename */
+/* TODO: Rename? Yes... */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -207,23 +197,25 @@ textarea {
   padding: .6em 3%;
   border: 2px solid var(--placeholder-grey);
   border-left: 5px solid;
-  border-radius: 5px;
+  border-radius: .2em;
   font-size: 1.125em;
   min-height: 44px;
-  flex: 2.5;
   transition: border-color .5s ease-out;
 }
 
+input[name="user_zip"] {
+  background: red;
+  color: red;
+  width: 50%;
+}
+
+/* TODO: Check this code */
 textarea {
   overflow: auto;
   padding : 10px;
   width   : 100%;
   height: 150px;
   resize  : none;
-}
-
-input[name="user_zip"] {
-  width: 50%;
 }
 
 select {
@@ -264,16 +256,6 @@ button:focus {
   transition: border-color .5s ease-in;
 }
 
-
-/*
-input:required:invalid {
-  border-left-color: 2px solid red;
-} */
-
-/* input:required, {
-  border-color:hsl(0, 20%, 50%);
-} */
-
 input:focus,
 select:focus,
 textarea:focus {
@@ -291,6 +273,7 @@ input:focus:invalid {
   border-left-color: red;
 }
 
+/* TODO: Remove before submit */
 /* .simple-form input:required:valid {
   border-left-color: palegreen;
 } */
@@ -298,17 +281,18 @@ input:focus:invalid {
 input:required:valid,
 input:focus:valid,
 input:optional:valid {
-    /* background:hsl(120, 50%, 90%); */
-    border-left-color:hsl(120, 50%, 50%);
+  /* background:hsl(120, 50%, 90%); */
+  border-left-color:hsl(120, 50%, 50%);
 }
 
 input:optional {
-    background:hsl(300, 50%, 90%);
-    border-color: hsl(180, 50%, 90%);
+  background:hsl(300, 50%, 90%);
+  border-color: hsl(180, 50%, 90%);
 }
 
-    /* border-color:hsl(0, 20%, 50%); */
-    /* background:hsl(0, 50%, 90%); */
+/* TODO: Remove before submit */
+  /* border-color:hsl(0, 20%, 50%); */
+  /* background:hsl(0, 50%, 90%); */
 
 
 input::-webkit-input-placeholder {
@@ -358,14 +342,15 @@ textarea:hover {
   border-radius: .2em;
   background-color: #322a60;
   color: var(--primary--white);
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
   font-size: 1.8em; /* 150% / 24px; */
+  transition: opacity ease-in-out .5s;
 }
 
 .form__submit-btn:hover {
-  background-color: darkgreen;
+  opacity: .75;
 }
 
 .form__submit-btn:active {
@@ -410,9 +395,11 @@ textarea:hover {
 
 /* Styles for orientation landscape, tested for iPhone 5, 6, 6plus, X etc. Left out tablet landscape, because splitting up the form into two columns just to fill up screen width is, imo a bad thing */
 @media (max-height: 415px) and (orientation: landscape) {
+
   html {
     font-size: .8em;
   }
+
   body {
     /* TODO: Remove before submit */
     background: lightskyblue;
@@ -423,49 +410,28 @@ textarea:hover {
     border-bottom-width: .5px;
   }
 
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  select,
+  textarea {
+    font-size: 1.2em;
+  }
+
   .form__input {
     font-size: 1.2em;
   }
 
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="url"],
-  select,
-  textarea {
-    font-size: 1.2em;
+  input[name="user_zip"] {
+  width: 25%;
   }
-
-
 }
 
 @media (min-height: 416px) and (min-width: 760px) {
+
   html {
     font-size: 1.1em;
-  }
-
-      /* TODO: Use better names? */
-  .form__field {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  /* Flexbox settings */
-
-
-
-  .form__label {
-    font-size: 1.2em;
-  }
-
-  /* TODO: Rename */
-  input[type="text"],
-  input[type="tel"],
-  input[type="email"],
-  input[type="url"],
-  select,
-  textarea {
-    flex: 2.5;
   }
 
   .header__intro {
@@ -473,9 +439,36 @@ textarea:hover {
     padding-bottom: 2.7em;
   }
 
+  .form__field {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form__label {
+    font-size: 1.2em;
+    flex: 1 1 25%;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="url"],
+  select,
+  textarea {
+    flex: 1 1 75%;
+  }
+
+  label[for="zip"] {
+    flex: 0 0 25%;
+  }
+
+  input[name="user_zip"] {
+    flex: 0 0 25%;
+  }
 }
 
 @media (min-width: 1024px) {
+
   html {
     font-size: 1.3em;
   }
@@ -488,24 +481,17 @@ textarea:hover {
   input[type="text"],
   input[type="tel"],
   input[type="email"],
-  input[type="url"],
+  input[type="url"]
   select,
   textarea {
     font-size: 1.3em;
-    flex: 3.5;
+  }
+
+  .form__label {
+    flex-basis: 15%;
+  }
+
+  label[for="zip"] {
+    flex-basis: 20%;
   }
 }
-
-/*
-input:focus + .help,
-input:invalid + .help {
-    display:inline-block;
-}
-
-.help {
-    display:none;
-    font-size:90%;
-}
-input:focus + .help {
-    display:inline-block;
-} */
