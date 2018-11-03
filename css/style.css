@@ -5,6 +5,7 @@
   --primary--black: #0c2231;
   --secondary--black: #2a2a22;
   --tertiary--black: #444e56;
+  --primary--purple: #2e86de;
   --placeholder-grey: #a4b0be;
 }
 
@@ -82,7 +83,7 @@ The text fields require some common rules. Simply put, we remove their borders a
 ============================ */
 
 .header__intro {
-  background-color: #532F61;
+  background-color: var(--primary--purple);
   /* margin-bottom: 1.2em; */
   /* I follow the CSS Wizards advice on declaring longhand for clarity and a better grip on the projects cascade.
   link to article: https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/ */
@@ -154,7 +155,7 @@ legend {
 legend::before {
   content: counter(steps) ". ";
   /* TODO: CHANGE COLOR */
-  color: teal;
+  color: var(--primary--purple);
 }
 
 .form__section {
@@ -193,19 +194,25 @@ input[type="tel"],
 input[type="url"],
 select,
 textarea {
-  background-color: #eff0f1;
+  background-color: #dfe4ea;
+  opacity: .8;
   padding: .6em 3%;
   border: 2px solid var(--placeholder-grey);
-  border-left: 5px solid;
   border-radius: .2em;
   font-size: 1.125em;
-  min-height: 44px;
   transition: border-color .5s ease-out;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+select {
+  min-height: 44px;
+  border-left: 5px solid;
+}
+
 input[name="user_zip"] {
-  background: red;
-  color: red;
   width: 50%;
 }
 
@@ -235,7 +242,7 @@ When one of these fields gains focus, we highlight them with a light grey, trans
 /* TODO: Test :checked pseudo class */
 input[type="checkbox"]:checked + label,
 input[type="radio"]:checked + label {
-  color: #729f98;
+  color: #218c74;
 }
 
 input[type="checkbox"],
@@ -252,25 +259,26 @@ textarea:focus,
 button:focus {
   outline      : none;
   /* border-radius: 5px; */
-  background   : rgba(0,0,0,.1);
-  transition: border-color .5s ease-in;
+  /* background   : rgba(0,0,0,.1); */
+  background: #fff;
+  transition: .5s ease-in-out;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
   /* TODO: Change the color keyword to hex value, plx */
-  border-color: darkblue;
-  border-top-color: darkblue;
+  border-color: #2e86de;
+  /* border-top-color: darkblue;
   border-right-color: darkblue;
-  border-bottom-color: darkblue;
+  border-bottom-color: darkblue; */
   -webkit-transition: 10s;
   transition: 10s;
 }
 
 input:required:invalid,
 input:focus:invalid {
-  border-left-color: red;
+  border-left-color: #b33939;
 }
 
 /* TODO: Remove before submit */
@@ -281,8 +289,8 @@ input:focus:invalid {
 input:required:valid,
 input:focus:valid,
 input:optional:valid {
-  /* background:hsl(120, 50%, 90%); */
-  border-left-color:hsl(120, 50%, 50%);
+background:hsl(120, 50%, 90%);
+  border-left-color: #218c74;
 }
 
 input:optional {
@@ -340,7 +348,7 @@ textarea:hover {
   padding: .8em 0;
   width: 100%;
   border-radius: .2em;
-  background-color: #322a60;
+  background-color: #2e86de;
   color: var(--primary--white);
   text-transform: uppercase;
   letter-spacing: 1px;
