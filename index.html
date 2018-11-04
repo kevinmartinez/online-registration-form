@@ -37,8 +37,8 @@
         <!-- Full name field -->
         <div class="form__field">
           <label class="form__label" for="name">Full Name</label>
-          <input type="text" name="user_name" placeholder="Required" id="name" required aria-required="true" pattern="(.*)\s(.*)"
-            title="Firstname Lastname">
+          <input type="text" name="user_name" placeholder="Required" id="name" required aria-required="true" pattern="(.*)"
+            title="Full Name" autocomplete="off">
         </div>
 
         <!-- Email field -->
@@ -59,13 +59,13 @@
         <!-- Website field -->
         <div class="form__field">
           <label class="form__label" for="website">Website</label>
-          <input class="form__input" type="url" name="user_website" placeholder="Optional" id="website">
+          <input class="form__input" type="url" name="user_website" placeholder="Optional" id="website" title="http:// or https://">
         </div>
 
         <!-- Phone # field -->
         <div class="form__field">
           <label class="form__label" for="phone">Phone Number</label>
-          <input class="form__input" type="tel" name="user_phone" id="phone" placeholder="Optional">
+          <input class="form__input" type="tel" name="user_phone" id="phone" placeholder="Optional" pattern=".*">
         </div>
 
         <!-- Street adress field -->
@@ -154,7 +154,7 @@
       <!-- Newsletter section -->
       <fieldset class="form__section form__section--newsletter">
         <legend class="heading heading--small">Newsletter</legend>
-        <h3 class="form__label label__margin">Select the newsletter you would like to recieve</h3>
+        <h3 class="form__label">Select the newsletter you would like to recieve</h3>
 
         <!-- HTML news field -->
         <div class="form__field form__field--newsletter flex--center">
@@ -174,7 +174,7 @@
           <label class="form__label" for="newsJS">JavaScript News</label>
         </div>
 
-        <h3 class="form__label label__margin">Newsletter Format</h3>
+        <h3 class="form__label">Newsletter Format</h3>
 
         <!-- HTML format field -->
         <div class="form__field form__field--newsletter flex--center">
