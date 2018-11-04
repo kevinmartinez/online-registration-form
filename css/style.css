@@ -7,9 +7,8 @@
   --tertiary--black: #444e56;
   --primary--purple: #0894BD;
   --placeholder-grey: #a4b0be;
-
   --required--grey: #E3E1E5;
-
+  --warning-red: #b33939;
   --font-stack-headings: 'Tinos', 'Times New Roman', Times, serif;
 }
 
@@ -42,29 +41,19 @@ pre,table,fieldset,hr,legend,
 
 body {
   background-color: var(--primary--white);
+  background-color: #F0F7FD;
 }
 
 h1, h2, h3, h4, h5, h6, .header--info, legend {
   font-family: 'Tinos', 'Times New Roman', Times, serif;
 }
 
-/* p {
-  margin: 0;
-  padding: 0;
-} */
 
 button, input, select, textarea {
   font-size   : 100%;
   font-family : inherit;
 }
 
-/*
-TODO: Read and remove
-<textarea> elements default to being rendered as a block element. The two important things here are the resize and overflow properties. Because our design is a fixed-size design, we will use the resize property to prevent users from resizing our multi-line text field. The overflow property is used to make the field render more consistently across browsers. Some browsers default to the value auto, while some default to the value scroll. In our case, it's better to be sure every one will use auto: */
-/*
-TODO: Read and remove
-The text fields require some common rules. Simply put, we remove their borders and backgrounds, and redefine their padding and margin:
-*/
 .container {
   padding: 0 1%;
   /* TODO: BEM, DRY? Combine max-width: 600 and auto margins? */
@@ -87,10 +76,9 @@ The text fields require some common rules. Simply put, we remove their borders a
 ============================ */
 
 .header__intro {
-  /* IE11 fallback */
-  background-color: #0894BD;
+  background-color: #0894BD; /* IE11 fallback */
   background-color: var(--primary--purple);
-  /* margin-bottom: 1.2em; */
+  background-color: #304D6D;
   /* I follow the CSS Wizards advice on declaring longhand for clarity and a better grip on the projects cascade.
   link to article: https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/ */
   padding-top: .5em;
@@ -103,7 +91,6 @@ The text fields require some common rules. Simply put, we remove their borders a
 }
 
 .header__info {
-  /* margin-top: 0.8em; */
   color: #444e56; /* IE11 fallback */
   color: var(--tertiary--black);
   font-weight: 400;
@@ -111,8 +98,6 @@ The text fields require some common rules. Simply put, we remove their borders a
 }
 
 .header__divider {
-  /* margin-top: 2em; */
-  /* margin-bottom: 1em; */
   height: 2px;
   border-top-color: #444e56; /* IE11 fallback */
   border-top: 4px solid  var(--tertiary--black);
@@ -134,7 +119,6 @@ The text fields require some common rules. Simply put, we remove their borders a
   color: var(--primary--white);
   text-transform: uppercase;
   font-size: 1.9em;
-  /* padding-bottom: .5em; */
 }
 
 .heading--medium {
@@ -153,6 +137,7 @@ The text fields require some common rules. Simply put, we remove their borders a
 /* Sections
 ============================ */
 
+/* Styles for the legend section counter */
 .form {
   counter-reset: steps;
 }
@@ -163,8 +148,8 @@ legend {
 
 legend::before {
   content: counter(steps) ". ";
-  /* TODO: CHANGE COLOR */
   color: var(--primary--purple);
+  color: #304D6D;
 }
 
 .form__section {
@@ -177,7 +162,6 @@ legend::before {
   border-bottom: 2px solid var(--primary--black);
 }
 
-/* TODO: Use better names? */
 .form__field {
   display: flex;
   flex-direction: column;
@@ -196,20 +180,40 @@ legend::before {
   color: var(--secondary--black);
 }
 
-/* TODO: Rename? Yes... */
+/* Styles for textarea label heading, margin-bottom is set to the same as default headings bottom margins */
+.label__margin {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+/* TODO: Rename? Yes... NO, input[attribute selector] is good and explanatory*/
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="url"],
-select,
-textarea {
-  background-color: #dfe4ea;
-  opacity: .8;
+select{
+  background-color: #EEF7FF;
   padding: .6em 3%;
-  border: 2px solid var(--placeholder-grey);
+  border: 2px solid;
   border-radius: .2em;
   font-size: 1.125em;
-  transition: border-color .5s ease-out;
+  transition: .6s ease-in-out;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url(../img/arrow_up_and_down.svg) no-repeat right/20px #EEF7FF;
+}
+
+textarea {
+  background-color: #F3F6F8;
+  border: 2px solid #304D6D;
+  border-radius: .2em;
+  padding: .6em 3%;
+  font-size: 1.125em;
+  transition: .5s ease-out;
 }
 
 input[type="text"],
@@ -229,30 +233,14 @@ input[name="user_zip"] {
 /* TODO: Check this code */
 textarea {
   overflow: auto;
-  padding : 10px;
   width   : 100%;
-  height: 150px;
+  height: 6em;
   resize  : none;
 }
 
-select {
-  color: var(--placeholder-grey);
-  background-color: red;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  /* background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd; */
-  background: url(../img/arrow_up_and_down.svg) no-repeat right/20px #eff0f1;
-}
-
-/*
-TODO: Read and remove
-When one of these fields gains focus, we highlight them with a light grey, transparent, background. Note that it's important to add the outline property, in order to remove the default focus highlight added by some browsers:
-
-/* TODO: Test :checked pseudo class */
 input[type="checkbox"]:checked + label,
 input[type="radio"]:checked + label {
-  color: #218c74;
+  color: #4D7A7B;
 }
 
 input[type="checkbox"],
@@ -267,67 +255,66 @@ input[type="url"]:focus,
 select:focus,
 textarea:focus,
 button:focus {
-  outline      : none;
-  /* border-radius: 5px; */
-  /* background   : rgba(0,0,0,.1); */
-  background: #fff;
-  transition: .5s ease-in-out;
+  outline: 0;
 }
 
-input:focus,
-select:focus,
+/* Remove outlines in IE Edge */
+input:required:invalid {
+    outline: none;
+}
+
+/*  Remove outlines in Firefox */
+input:invalid {
+    box-shadow: none;
+}
+
+input:required:focus,
+input:optional:focus,
 textarea:focus {
-  /* TODO: Change the color keyword to hex value, plx */
-  border-color: #2e86de;
-  /* border-top-color: darkblue;
-  border-right-color: darkblue;
-  border-bottom-color: darkblue; */
-  -webkit-transition: 10s;
-  transition: 10s;
-  border-left-width: 5px;
+  background-color: #fff;
+}
+
+select:focus {
+  background: url(../img/arrow_up_and_down.svg) no-repeat right/20px #fff;
+}
+
+input:required,
+input:optional:invalid  {
+  background-color: #DEF0FF;
+  border-left-width: 8px;
+  border-color: #C793A2;
+  /* border-color: var(--warning-red); */
 }
 
 /* input:required:invalid, */
-input:focus:invalid {
-  background-color: #E3E1E5;
-  border-left-width: 5px;
-  border-left-color: #b33939;
+input:focus:invalid,
+input:focus:optional:invalid
+{
+  border-left-width: 8px;
+  border-color: #b33939;
+  border-color: var(--warning-red);
 }
 
 input:required:valid,
-input:focus:valid ,
-input:optional:valid {
-  border-left-color: #218c74;
-  border-left-width: 5px;
+input:focus:valid,
+input:optional:valid,
+select {
+  border-color: #7EDFB6;
+  border-left-width: 8px;
 }
 
-input:optional:invalid {
-  background:hsl(300, 50%, 90%);
-  border-color: hsl(180, 50%, 90%);
-  border-color: #0894BD;
-  background-color: #F9F7FB;
+input:optional:focus,
+select:focus {
+  border-left-width: 8px;
+  border-color: #68B795;
 }
 
-/* TODO: Remove before submit */
-  /* border-color:hsl(0, 20%, 50%); */
-  /* background:hsl(0, 50%, 90%); */
-
+/* Ignore Google Chromes background color when autofill suggestion is selected */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #DEF0FF inset;
+}
 
 input::-webkit-input-placeholder {
-  color: var(--placeholder-grey);
-  text-align: right;
-  font-weight: 400;
-  font-style: italic;
-  /* placeholder pseudo element is a child of input,
-  so we need to set the font size relative to its parent */
-  font-size: .9em;
-}
-
-input:invalid::-webkit-input-placeholder {
-  color: red;
-}
-
-input::-ms-input-placeholder {
   color: var(--placeholder-grey);
   text-align: right;
   font-weight: 400;
@@ -347,11 +334,21 @@ input::placeholder {
   font-size: .9em;
 }
 
+/* IE Edge */
+input:invalid::-webkit-input-placeholder {
+  /* TODO: Set red to variable */
+  color: #b33939; /* IE11 fallback :( */
+  color: var(--warning-red);
+}
+
+input:invalid::placeholder {
+  color: #b33939; /* IE11 fallback :( */
+  color: var(--warning-red);
+}
+
 input:hover,
-textarea:hover {
-  background: #f0eceb;
-  -webkit-transition: .5s;
-  transition: .5s;
+select:hover {
+  background-color: #CDE9FF;
 }
 
 /* TODO: FIX BEM */
@@ -359,12 +356,11 @@ textarea:hover {
   border: none;
   display: block;
   cursor: pointer;
-  padding: .8em 0;
+  padding: .5em 0;
   width: 100%;
   border-radius: .2em;
-  background-color: #2e86de;
+  background-color: #304D6D;
   color: var(--primary--white);
-  text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
   font-size: 1.8em; /* 150% / 24px; */
@@ -374,46 +370,6 @@ textarea:hover {
 .form__submit-btn:hover {
   opacity: .75;
 }
-
-.form__submit-btn:active {
-  background-color: darkred;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Styles for orientation landscape, tested for iPhone 5, 6, 6plus, X etc. Left out tablet landscape, because splitting up the form into two columns just to fill up screen width is, imo a bad thing */
 @media (max-height: 415px) and (orientation: landscape) {
