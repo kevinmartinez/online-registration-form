@@ -9,6 +9,8 @@
   --placeholder-grey: #a4b0be;
 
   --required--grey: #E3E1E5;
+
+  --font-stack-headings: 'Tinos', 'Times New Roman', Times, serif;
 }
 
 html{
@@ -85,6 +87,8 @@ The text fields require some common rules. Simply put, we remove their borders a
 ============================ */
 
 .header__intro {
+  /* IE11 fallback */
+  background-color: #0894BD;
   background-color: var(--primary--purple);
   /* margin-bottom: 1.2em; */
   /* I follow the CSS Wizards advice on declaring longhand for clarity and a better grip on the projects cascade.
@@ -100,6 +104,7 @@ The text fields require some common rules. Simply put, we remove their borders a
 
 .header__info {
   /* margin-top: 0.8em; */
+  color: #444e56; /* IE11 fallback */
   color: var(--tertiary--black);
   font-weight: 400;
   font-size: 1.2em;
@@ -109,8 +114,10 @@ The text fields require some common rules. Simply put, we remove their borders a
   /* margin-top: 2em; */
   /* margin-bottom: 1em; */
   height: 2px;
+  border-top-color: #444e56; /* IE11 fallback */
   border-top: 4px solid  var(--tertiary--black);
   border-right: none;
+  border-bottom-color: #444e56; /* IE11 fallback */
   border-bottom: 2px solid  var(--tertiary--black);
   border-left: none;
 }
@@ -212,6 +219,7 @@ input[type="url"],
 select {
   min-height: 44px;
   border-left: 5px solid;
+  border-left: 3px solid;
 }
 
 input[name="user_zip"] {
@@ -276,30 +284,24 @@ textarea:focus {
   border-bottom-color: darkblue; */
   -webkit-transition: 10s;
   transition: 10s;
+  border-left-width: 5px;
 }
 
-input:required:invalid,
+/* input:required:invalid, */
 input:focus:invalid {
   background-color: #E3E1E5;
+  border-left-width: 5px;
   border-left-color: #b33939;
 }
-
-/* input:required:valid,
-input:focus:valid,
-input:optional:valid {
-  background:hsl(120, 50%, 90%);
-  border-left-color: #218c74;
-} */
-
-
 
 input:required:valid,
 input:focus:valid ,
 input:optional:valid {
   border-left-color: #218c74;
+  border-left-width: 5px;
 }
 
-input:optional {
+input:optional:invalid {
   background:hsl(300, 50%, 90%);
   border-color: hsl(180, 50%, 90%);
   border-color: #0894BD;
@@ -319,6 +321,10 @@ input::-webkit-input-placeholder {
   /* placeholder pseudo element is a child of input,
   so we need to set the font size relative to its parent */
   font-size: .9em;
+}
+
+input:invalid::-webkit-input-placeholder {
+  color: red;
 }
 
 input::-ms-input-placeholder {
