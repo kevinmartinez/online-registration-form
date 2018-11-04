@@ -1,12 +1,14 @@
 /* Variables (Custom Properties)
 ============================ */
 :root {
-  --primary--white: #f7f1e3;
+  --primary--white: #F9F7FB;
   --primary--black: #0c2231;
   --secondary--black: #2a2a22;
   --tertiary--black: #444e56;
-  --primary--purple: #2e86de;
+  --primary--purple: #0894BD;
   --placeholder-grey: #a4b0be;
+
+  --required--grey: #E3E1E5;
 }
 
 html{
@@ -44,10 +46,10 @@ h1, h2, h3, h4, h5, h6, .header--info, legend {
   font-family: 'Tinos', 'Times New Roman', Times, serif;
 }
 
-p {
+/* p {
   margin: 0;
   padding: 0;
-}
+} */
 
 button, input, select, textarea {
   font-size   : 100%;
@@ -87,8 +89,8 @@ The text fields require some common rules. Simply put, we remove their borders a
   /* margin-bottom: 1.2em; */
   /* I follow the CSS Wizards advice on declaring longhand for clarity and a better grip on the projects cascade.
   link to article: https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/ */
-  padding-top: 1.5em;
-  padding-bottom: 2em;
+  padding-top: .5em;
+  padding-bottom: .8em;
 }
 
 .header__signup {
@@ -125,7 +127,7 @@ The text fields require some common rules. Simply put, we remove their borders a
   color: var(--primary--white);
   text-transform: uppercase;
   font-size: 1.9em;
-  padding-bottom: .5em;
+  /* padding-bottom: .5em; */
 }
 
 .heading--medium {
@@ -278,24 +280,30 @@ textarea:focus {
 
 input:required:invalid,
 input:focus:invalid {
+  background-color: #E3E1E5;
   border-left-color: #b33939;
 }
 
-/* TODO: Remove before submit */
-/* .simple-form input:required:valid {
-  border-left-color: palegreen;
-} */
-
-input:required:valid,
+/* input:required:valid,
 input:focus:valid,
 input:optional:valid {
-background:hsl(120, 50%, 90%);
+  background:hsl(120, 50%, 90%);
+  border-left-color: #218c74;
+} */
+
+
+
+input:required:valid,
+input:focus:valid ,
+input:optional:valid {
   border-left-color: #218c74;
 }
 
 input:optional {
   background:hsl(300, 50%, 90%);
   border-color: hsl(180, 50%, 90%);
+  border-color: #0894BD;
+  background-color: #F9F7FB;
 }
 
 /* TODO: Remove before submit */
@@ -443,8 +451,7 @@ textarea:hover {
   }
 
   .header__intro {
-    padding-top: 2.4em;
-    padding-bottom: 2.7em;
+    padding-bottom: 1.3em;
   }
 
   .form__field {
