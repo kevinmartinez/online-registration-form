@@ -163,13 +163,23 @@ legend::before {
 }
 
 .form__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .form__field--newsletter {
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .form__label {
@@ -197,6 +207,8 @@ select{
   border: 2px solid;
   border-radius: .2em;
   font-size: 1.125em;
+  -webkit-transition: .6s ease-in-out;
+  -o-transition: .6s ease-in-out;
   transition: .6s ease-in-out;
 }
 
@@ -213,6 +225,8 @@ textarea {
   border-radius: .2em;
   padding: .6em 3%;
   font-size: 1.125em;
+  -webkit-transition: .5s ease-out;
+  -o-transition: .5s ease-out;
   transition: .5s ease-out;
 }
 
@@ -230,12 +244,11 @@ input[name="user_zip"] {
   width: 50%;
 }
 
-/* TODO: Check this code */
 textarea {
   overflow: auto;
-  width   : 100%;
+  width: 100%;
   height: 6em;
-  resize  : none;
+  resize: none;
 }
 
 input[type="checkbox"]:checked + label,
@@ -265,7 +278,8 @@ input:required:invalid {
 
 /*  Remove outlines in Firefox */
 input:invalid {
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 input:required:focus,
@@ -311,10 +325,30 @@ select:focus {
 
 /* Ignore Google Chromes background color when autofill suggestion is selected */
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #DEF0FF inset;
+  -webkit-box-shadow: 0 0 0px 1000px #DEF0FF inset;
 }
 
 input::-webkit-input-placeholder {
+  color: var(--placeholder-grey);
+  text-align: right;
+  font-weight: 400;
+  font-style: italic;
+  /* placeholder pseudo element is a child of input,
+  so we need to set the font size relative to its parent */
+  font-size: .9em;
+}
+
+input:-ms-input-placeholder {
+  color: var(--placeholder-grey);
+  text-align: right;
+  font-weight: 400;
+  font-style: italic;
+  /* placeholder pseudo element is a child of input,
+  so we need to set the font size relative to its parent */
+  font-size: .9em;
+}
+
+input::-ms-input-placeholder {
   color: var(--placeholder-grey);
   text-align: right;
   font-weight: 400;
@@ -337,6 +371,16 @@ input::placeholder {
 /* IE Edge */
 input:invalid::-webkit-input-placeholder {
   /* TODO: Set red to variable */
+  color: #b33939; /* IE11 fallback :( */
+  color: var(--warning-red);
+}
+
+input:invalid:-ms-input-placeholder {
+  color: #b33939; /* IE11 fallback :( */
+  color: var(--warning-red);
+}
+
+input:invalid::-ms-input-placeholder {
   color: #b33939; /* IE11 fallback :( */
   color: var(--warning-red);
 }
@@ -364,6 +408,8 @@ select:hover {
   letter-spacing: 1px;
   font-weight: 700;
   font-size: 1.8em; /* 150% / 24px; */
+  -webkit-transition: opacity ease-in-out .5s;
+  -o-transition: opacity ease-in-out .5s;
   transition: opacity ease-in-out .5s;
 }
 
@@ -417,13 +463,20 @@ select:hover {
   }
 
   .form__field {
-    flex-direction: row;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .form__label {
     font-size: 1.2em;
-    flex: 1 1 25%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 25%;
+            flex: 1 1 25%;
   }
 
   input[type="text"],
@@ -432,15 +485,21 @@ select:hover {
   input[type="url"],
   select,
   textarea {
-    flex: 1 1 75%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 75%;
+            flex: 1 1 75%;
   }
 
   label[for="zip"] {
-    flex: 0 0 25%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
   }
 
   input[name="user_zip"] {
-    flex: 0 0 25%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
   }
 }
 
@@ -465,10 +524,12 @@ select:hover {
   }
 
   .form__label {
-    flex-basis: 15%;
+    -ms-flex-preferred-size: 15%;
+        flex-basis: 15%;
   }
 
   label[for="zip"] {
-    flex-basis: 20%;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
   }
 }
