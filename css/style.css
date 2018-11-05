@@ -1,15 +1,27 @@
 /* Variables (Custom Properties)
 ============================ */
 :root {
-  --primary--white: #F9F7FB;
-  --primary--black: #0c2231;
-  --secondary--black: #2a2a22;
+  --japanese-indigo: #244344;
+  --raisin-black: #262726;
+  --black-olive: #383b38;
+  --white: #fdfefe;
+  --mint-cream: #f5fafc;
+  --ghost-white: #f7fbfc;
+  --dark-vanilla: #ccd6cc;
+  --steel-teal: #5c8385;
+  --pale-chestnut: #d9abb8;
+  --old-rose: #c47b90;
+  --azureish-white: #d7e9f3;
+
+  /* --primary--white: #F9F7FB;
+  --primary--black: #262726;
+  --secondary--black: #262726;
   --tertiary--black: #444e56;
   --primary--purple: #0894BD;
   --placeholder-grey: #a4b0be;
   --required--grey: #E3E1E5;
   --warning-red: #b33939;
-  --font-stack-headings: 'Tinos', 'Times New Roman', Times, serif;
+  --font-stack-headings: 'Tinos', 'Times New Roman', Times, serif; */
 }
 
 html{
@@ -22,9 +34,17 @@ html{
 h1,h2,h3,h4,h5,h6,hgroup,
 ul,ol,dd,
 p,figure,
-pre,table,fieldset,hr,legend,
+pre,table,fieldset,hr, legend,
 .form__field {
     margin-bottom: 1.5rem;
+}
+
+.form__section--newsletter legend{
+  margin-bottom: 0;
+}
+
+.form__section {
+  margin-bottom: 2.5rem;
 }
 
 *,
@@ -35,8 +55,8 @@ pre,table,fieldset,hr,legend,
 }
 
 body {
-  background-color: var(--primary--white);
-  background-color: #F3F6F8;
+  background-color: #fdfefe; /* IE11 fallback */
+  background-color: var(--white);
 }
 
 h1, h2, h3, h4, h5, h6, .header--info, legend {
@@ -63,8 +83,9 @@ button, input, select, textarea {
 }
 
 .header__intro {
-  background-color: var(--primary--purple);
-  background-color: #304D6D;
+  background-color: #244344;
+  background-color: var(--japanese-indigo);
+  /* background-color: var(--); */
   /* I follow the CSS Wizards advice on declaring longhand for clarity and a better grip on the projects cascade.
   link to article: https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/ */
   padding-top: .1em;
@@ -98,13 +119,14 @@ button, input, select, textarea {
 }
 
 .heading--large  {
-  color: var(--primary--white);
+  color: #fdfefe; /* IE11 */
+  color: var(--white);
   text-transform: uppercase;
   font-size: 1.8em;
 }
 
 .heading--medium {
-  color: var(--primary--black);
+  color: #383B38; /* Black olive */
   font-size: 1.5em;
   line-height: 1.2;
 }
@@ -183,7 +205,7 @@ input[type="email"],
 input[type="tel"],
 input[type="url"],
 select {
-  background-color: #EEF7FF;
+  background-color: #EBF4F9;
   padding: .6em 3%;
   border: 2px solid;
   border-radius: .2em;
@@ -201,7 +223,7 @@ select {
 }
 
 textarea {
-  background-color: #F3F6F8;
+  background-color: #F5FAFC;
   border: 2px solid #304D6D;
   border-radius: .2em;
   padding: .6em 3%;
@@ -234,7 +256,8 @@ textarea {
 
 input[type="checkbox"]:checked + label,
 input[type="radio"]:checked + label {
-  color: #4D7A7B;
+  color: #5C8385; /* Steel teal */
+  color: var(--steel-teal);
 }
 
 input[type="checkbox"],
@@ -266,19 +289,20 @@ input:invalid {
 input:required:focus,
 input:optional:focus,
 textarea:focus {
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 select:focus {
-  background: url(../img/arrow_up_and_down.svg) no-repeat right/20px #fff;
+  background: url(../img/arrow_up_and_down.svg) no-repeat right/20px var(--white);
 }
 
 input:required,
 input:optional:invalid  {
-  background-color: #DEF0FF;
+  background-color: #d7e9f3;
+  background-color: var(--azureish-white);
   border-left-width: 8px;
-  border-color: #C793A2;
-  /* border-color: var(--warning-red); */
+  border-color: #d9abb8; /* IE11 */
+  border-color: var(--pale-chestnut);
 }
 
 /* input:required:invalid, */
@@ -286,56 +310,46 @@ input:focus:invalid,
 input:focus:optional:invalid
 {
   border-left-width: 8px;
-  border-color: #b33939;
-  border-color: var(--warning-red);
+  border-color: #c47b90; /* IE11 */
+  border-color: var(--old-rose);
 }
 
 input:required:valid,
 input:focus:valid,
 input:optional:valid,
 select {
-  border-color: #7EDFB6;
+  border-color: #ccd6cc; /* Dark vanilla */
+  border-color: var(--dark-vanilla);
   border-left-width: 8px;
 }
 
 input:optional:focus,
 select:focus {
   border-left-width: 8px;
-  border-color: #68B795;
+  border-color: #5c8385; /* Steel teal */
+  border-color: var(--steel-teal);
 }
 
 /* Ignore Google Chromes background color when autofill suggestion is selected */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #DEF0FF inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--azureish-white) inset;
 }
 
+/* These placeholder rules can't be combined (DRY), seems like they must be declared individually */
 input::-webkit-input-placeholder {
   color: var(--placeholder-grey);
   text-align: right;
   font-weight: 400;
   font-style: italic;
-  /* placeholder pseudo element is a child of input,
-  so we need to set the font size relative to its parent */
-  font-size: .9em;
-}
-
-input:-ms-input-placeholder {
-  color: var(--placeholder-grey);
-  text-align: right;
-  font-weight: 400;
-  font-style: italic;
-  /* placeholder pseudo element is a child of input,
-  so we need to set the font size relative to its parent */
   font-size: .9em;
 }
 
 input::-ms-input-placeholder {
+  /* TODO: CHANGE */
   color: var(--placeholder-grey);
   text-align: right;
   font-weight: 400;
   font-style: italic;
-  /* placeholder pseudo element is a child of input,
-  so we need to set the font size relative to its parent */
   font-size: .9em;
 }
 
@@ -351,29 +365,22 @@ input::placeholder {
 
 /* IE Edge */
 input:invalid::-webkit-input-placeholder {
-  /* TODO: Set red to variable */
-  color: #b33939; /* IE11 fallback :( */
-  color: var(--warning-red);
+  color: var(--old-rose);
 }
 
+/* IE11 */
 input:invalid:-ms-input-placeholder {
-  color: #b33939; /* IE11 fallback :( */
-  color: var(--warning-red);
-}
-
-input:invalid::-ms-input-placeholder {
-  color: #b33939; /* IE11 fallback :( */
-  color: var(--warning-red);
+  color: #c47b90;
 }
 
 input:invalid::placeholder {
-  color: #b33939; /* IE11 fallback :( */
-  color: var(--warning-red);
+  color: var(--old-rose);
 }
 
 input:hover,
 select:hover {
-  background-color: #CDE9FF;
+  background-color: #f7fbfc; /* IE11 */
+  background-color: var(--ghost-white);
 }
 
 /* TODO: FIX BEM */
@@ -384,8 +391,10 @@ select:hover {
   padding: .5em 0;
   width: 100%;
   border-radius: .2em;
-  background-color: #304D6D;
-  color: var(--primary--white);
+  background-color: #244344;
+  background-color: var(--japanese-indigo);
+  color: #fdfefe;
+  color: var(--white);
   letter-spacing: 1px;
   font-weight: 700;
   font-size: 1.8em; /* 150% / 24px; */
@@ -429,6 +438,7 @@ select:hover {
   }
 }
 
+/* Medium sized screens */
 @media (min-height: 416px) and (min-width: 760px) {
 
   html {
@@ -436,7 +446,7 @@ select:hover {
   }
 
   .header__intro {
-    padding-bottom: 1.3em;
+    padding-bottom: .5em;
   }
 
   .form__field {
@@ -463,14 +473,14 @@ select:hover {
   select,
   textarea {
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 75%;
-            flex: 1 1 75%;
+        -ms-flex: 1 1 70%;
+            flex: 1 1 70%;
   }
 
   label[for="zip"] {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 25%;
-            flex: 0 0 25%;
+        -ms-flex: 0 0 27.5%;
+            flex: 0 0 27.5%;
   }
 
   input[name="user_zip"] {
@@ -480,6 +490,7 @@ select:hover {
   }
 }
 
+/* Large size screens */
 @media (min-width: 1024px) {
 
   html {
@@ -491,6 +502,11 @@ select:hover {
     max-width: 900px;
   }
 
+  .header__intro {
+    padding-top: .8em;
+    padding-bottom: 1em;
+  }
+
   .form__label {
     -ms-flex-preferred-size: 15%;
         flex-basis: 15%;
@@ -498,6 +514,6 @@ select:hover {
 
   label[for="zip"] {
     -ms-flex-preferred-size: 20%;
-        flex-basis: 20%;
+        flex-basis: 22.6%;
   }
 }
