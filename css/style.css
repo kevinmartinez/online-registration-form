@@ -24,13 +24,8 @@ ul,ol,dd,
 p,figure,
 pre,table,fieldset,hr,legend,
 .form__field {
-    margin-bottom:1.5rem;
+    margin-bottom: 1.5rem;
 }
-
-/* Inherit 'box-sizing: border-box' from <html> selector,
-  should be better than to use declare box-sizing with the universal
-  * selector, because this method applies to pseudo elements
-*/
 
 *,
 *::before,
@@ -41,7 +36,7 @@ pre,table,fieldset,hr,legend,
 
 body {
   background-color: var(--primary--white);
-  background-color: #F0F7FD;
+  background-color: #F3F6F8;
 }
 
 h1, h2, h3, h4, h5, h6, .header--info, legend {
@@ -50,51 +45,38 @@ h1, h2, h3, h4, h5, h6, .header--info, legend {
 
 
 button, input, select, textarea {
-  font-size   : 100%;
-  font-family : inherit;
+  font-size: 100%;
+  font-family: inherit;
 }
 
-.container {
-  padding: 0 1%;
-  /* TODO: BEM, DRY? Combine max-width: 600 and auto margins? */
+.container,
+.header__signup {
+  padding: 0 3%;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* TODO: Look over these helper classes */
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.text--center {
+.header,
+.footer {
   text-align: center;
 }
 
-/* Header
-============================ */
-
 .header__intro {
-  background-color: #0894BD; /* IE11 fallback */
   background-color: var(--primary--purple);
   background-color: #304D6D;
   /* I follow the CSS Wizards advice on declaring longhand for clarity and a better grip on the projects cascade.
   link to article: https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/ */
-  padding-top: .5em;
-  padding-bottom: .8em;
-}
-
-.header__signup {
-  padding: 0 1%;
-  max-width: 600px;
+  padding-top: .1em;
+  padding-bottom: .2em;
 }
 
 .header__info {
   color: #444e56; /* IE11 fallback */
   color: var(--tertiary--black);
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  line-height: 1.2;
 }
 
 .header__divider {
@@ -118,18 +100,17 @@ button, input, select, textarea {
 .heading--large  {
   color: var(--primary--white);
   text-transform: uppercase;
-  font-size: 1.9em;
+  font-size: 1.8em;
 }
 
 .heading--medium {
   color: var(--primary--black);
-  font-size: 1.55em;
-  text-transform: capitalize;
+  font-size: 1.5em;
   line-height: 1.2;
 }
 
 .heading--small {
-  font-size: 1.4em;
+  font-size: 1.35em;
   color: var(--secondary--black);
   line-height: 1.3;
 }
@@ -183,7 +164,7 @@ legend::before {
 }
 
 .form__label {
-  font-size: 1.2em;
+  font-size: 1.15em;
   font-weight: 600;
   /* TODO: FIX VARIABLE FOR THIS COLOR */
   color: #444e56;
@@ -201,7 +182,7 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="url"],
-select{
+select {
   background-color: #EEF7FF;
   padding: .6em 3%;
   border: 2px solid;
@@ -443,12 +424,8 @@ select:hover {
     font-size: 1.2em;
   }
 
-  .form__input {
-    font-size: 1.2em;
-  }
-
   input[name="user_zip"] {
-  width: 25%;
+    width: 25%;
   }
 }
 
@@ -512,15 +489,6 @@ select:hover {
   .container,
   .header__signup {
     max-width: 900px;
-  }
-
-  input[type="text"],
-  input[type="tel"],
-  input[type="email"],
-  input[type="url"]
-  select,
-  textarea {
-    font-size: 1.3em;
   }
 
   .form__label {
