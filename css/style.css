@@ -12,16 +12,7 @@
   --pale-chestnut: #d9abb8;
   --old-rose: #c47b90;
   --azureish-white: #d7e9f3;
-
-  /* --primary--white: #F9F7FB;
-  --primary--black: #262726;
-  --secondary--black: #262726;
-  --tertiary--black: #444e56;
-  --primary--purple: #0894BD;
   --placeholder-grey: #a4b0be;
-  --required--grey: #E3E1E5;
-  --warning-red: #b33939;
-  --font-stack-headings: 'Tinos', 'Times New Roman', Times, serif; */
 }
 
 html{
@@ -93,8 +84,8 @@ button, input, select, textarea {
 }
 
 .header__info {
-  color: #444e56; /* IE11 fallback */
-  color: var(--tertiary--black);
+  color: #383b38; /* IE11 fallback */
+  color: var(--black-olive);
   font-weight: 400;
   font-size: 1.1em;
   line-height: 1.2;
@@ -102,11 +93,11 @@ button, input, select, textarea {
 
 .header__divider {
   height: 2px;
-  border-top-color: #444e56; /* IE11 fallback */
-  border-top: 4px solid  var(--tertiary--black);
+  border-top-color: #383b38; /* IE11 fallback */
+  border-top: 4px solid  var(--black-olive);
   border-right: none;
-  border-bottom-color: #444e56; /* IE11 fallback */
-  border-bottom: 2px solid  var(--tertiary--black);
+  border-bottom-color: #383b38; /* IE11 fallback */
+  border-bottom: 2px solid  var(--black-olive);
   border-left: none;
 }
 
@@ -126,14 +117,16 @@ button, input, select, textarea {
 }
 
 .heading--medium {
-  color: #383B38; /* Black olive */
+  color: #383b38;
+  color: var(--black-olive);
   font-size: 1.5em;
   line-height: 1.2;
 }
 
 .heading--small {
   font-size: 1.35em;
-  color: var(--secondary--black);
+  color: #262726;
+  color: var(--raisin-black);
   line-height: 1.3;
 }
 
@@ -151,8 +144,8 @@ legend {
 
 legend::before {
   content: counter(steps) ". ";
-  color: var(--primary--purple);
-  color: #304D6D;
+  color: #5c8385;
+  color: var(--steel-teal)
 }
 
 .form__section {
@@ -161,8 +154,8 @@ legend::before {
 }
 
 .form__section:nth-of-type(1){
-  /* TODO: Change color, do not use primary black, because it does not fit so good with the heading below */
-  border-bottom: 2px solid var(--primary--black);
+  border-bottom-color: #383b38;
+  border-bottom: 2px solid var(--black-olive);
 }
 
 .form__field {
@@ -188,9 +181,8 @@ legend::before {
 .form__label {
   font-size: 1.15em;
   font-weight: 600;
-  /* TODO: FIX VARIABLE FOR THIS COLOR */
-  color: #444e56;
-  color: var(--secondary--black);
+  color: #262726;
+  color: var(--raisin-black);
 }
 
 /* Styles for textarea label heading, margin-bottom is set to the same as default headings bottom margins */
@@ -205,7 +197,8 @@ input[type="email"],
 input[type="tel"],
 input[type="url"],
 select {
-  background-color: #EBF4F9;
+  background-color: #f5fafc;
+  background-color: var(--mint-cream);
   padding: .6em 3%;
   border: 2px solid;
   border-radius: .2em;
@@ -219,12 +212,13 @@ select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: url(../img/arrow_up_and_down.svg) no-repeat right/20px #EEF7FF;
+  background: url(../img/arrow_up_and_down.svg) no-repeat right/20px #f5fafc;
 }
 
 textarea {
-  background-color: #F5FAFC;
-  border: 2px solid #304D6D;
+  background-color: #f5fafc;
+  background-color: var(--mint-cream);
+  border: 2px solid var(--japanese-indigo);
   border-radius: .2em;
   padding: .6em 3%;
   font-size: 1.125em;
@@ -256,7 +250,7 @@ textarea {
 
 input[type="checkbox"]:checked + label,
 input[type="radio"]:checked + label {
-  color: #5C8385; /* Steel teal */
+  color: #5c8385; /* Steel teal */
   color: var(--steel-teal);
 }
 
@@ -289,6 +283,7 @@ input:invalid {
 input:required:focus,
 input:optional:focus,
 textarea:focus {
+  background-color: #fdfefe;
   background-color: var(--white);
 }
 
@@ -345,7 +340,6 @@ input::-webkit-input-placeholder {
 }
 
 input::-ms-input-placeholder {
-  /* TODO: CHANGE */
   color: var(--placeholder-grey);
   text-align: right;
   font-weight: 400;
@@ -383,7 +377,6 @@ select:hover {
   background-color: var(--ghost-white);
 }
 
-/* TODO: FIX BEM */
 .form__submit-btn {
   border: none;
   display: block;
@@ -412,11 +405,6 @@ select:hover {
 
   html {
     font-size: .8em;
-  }
-
-  body {
-    /* TODO: Remove before submit */
-    background: lightskyblue;
   }
 
   .header__divider {
